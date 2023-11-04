@@ -1,1 +1,9 @@
-<app-todo></app-todo>
+
+  <div>
+    <h1 *ngIf="showTitle">{{ title }}</h1>
+    <nav *ngIf="showTitle">
+      <a routerLink="/todo" routerLinkActive="active">Todo</a>
+    </nav>
+  </div>
+  <router-outlet></router-outlet>
+
