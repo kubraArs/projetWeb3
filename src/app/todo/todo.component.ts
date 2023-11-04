@@ -22,17 +22,18 @@ export class TodoComponent implements OnInit {
       taskName: form.controls['task'].value,
       isCompleted: false
     })
-    form.reset(); //pour vider le input
+    form.reset();
     this.todoStateService.setTodoData(this.taskArray);
   }
 
   //on recupere l'index du task du tableau
   onDelete(index: number) {
-    this.taskArray.splice(index, 1);//supp a l'indice 1 seule fois
+    this.taskArray.splice(index, 1);
   }
 
-  onCheck(index: number) {
-    this.taskArray[index].isCompleted = !this.taskArray[index].isCompleted;
+  onCheck(index: number, isChecked: boolean) {
+    this.taskArray[index].isCompleted = isChecked;
     this.todoStateService.setTodoData(this.taskArray);
   }
+
 }
