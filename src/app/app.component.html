@@ -1,1 +1,12 @@
-<app-todo></app-todo>
+<app-header (sideNavToggled)="sideNavStatus = $event;"></app-header>
+
+
+<main>
+    <app-sidebar [sideNavStatus]="sideNavStatus" [ngClass]="
+    {'app-side-nav-open': sideNavStatus}"></app-sidebar>
+
+    <app-todo [ngClass]="
+    {'app-todo': sideNavStatus}" ></app-todo>
+
+
+</main>

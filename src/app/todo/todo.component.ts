@@ -27,3 +27,4 @@ export class TodoComponent {
           this.taskArray[index].isCompleted = !this.taskArray[index].isCompleted ;
         }
 }
+export class TodolistComponent { }
