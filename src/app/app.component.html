@@ -1,1 +1,10 @@
-<app-todo></app-todo>
+<app-header (sideNavToggled)="sideNavStatus = $event;"></app-header>
+
+
+<main>
+    <app-sidebar [ngClass]="{'app-side-nav-open': sideNavStatus}"></app-sidebar>
+
+    <router-outlet></router-outlet>
+</main>
+
+

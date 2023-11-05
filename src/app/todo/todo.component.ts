@@ -1,29 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { TodoStateService } from '../todo-state-service/todo-state.service';
+import { SidebarService } from '../sidebar-service/sidebar.service';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
-export class TodoComponent {
-  taskArray=[{taskName:'brush teeth', isCompleted : false}];
-        onSubmit(form :NgForm) {
-          console.log(form);
-          this.taskArray.push({
-            taskName:form.controls['task'].value,
-            isCompleted: false
-          })
-          form.reset(); //pour vider le input
-        }
-        //on recupere l'index du task du tableau
-        onDelete(index: number){
-            console.log(index);
-            this.taskArray.splice(index, 1);//supp a l'indice 1 seule fois
-        }
-        onCheck(index : number){
-          
-          console.log(this.taskArray);
-          this.taskArray[index].isCompleted = !this.taskArray[index].isCompleted ;
-        }
+
+export class TodoComponent implements OnInit {
+  sideNavStatus: boolean = false;
+  taskArray: any[] = [];
+
+  constructor(
+    private todoStateService: TodoStateService,
+    private sidebarService: SidebarService
+  ) {}
+
+  ngOnInit() {
+    this.taskArray = this.todoStateService.getTodoData() || [];
+
+    
+    this.sidebarService.sideNavStatus$.subscribe(status => {
+      this.sideNavStatus = status;
+    });
+  }
+
+  onSubmit(form: NgForm) {
+    this.taskArray.push({
+      taskName: form.controls['task'].value,
+      isCompleted: false
+    });
+    form.reset();
+    this.todoStateService.setTodoData(this.taskArray);
+  }
+
+  onDelete(index: number) {
+    this.taskArray.splice(index, 1);
+  }
+
+  onCheck(index: number, isChecked: boolean) {
+    this.taskArray[index].isCompleted = isChecked;
+    this.todoStateService.setTodoData(this.taskArray);
+  }
 }
