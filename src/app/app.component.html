@@ -2,11 +2,9 @@
 
 
 <main>
-    <app-sidebar [sideNavStatus]="sideNavStatus" [ngClass]="
-    {'app-side-nav-open': sideNavStatus}"></app-sidebar>
+    <app-sidebar [ngClass]="{'app-side-nav-open': sideNavStatus}"></app-sidebar>
 
-    <app-todo [ngClass]="
-    {'app-todo': sideNavStatus}" ></app-todo>
-
-
+    <router-outlet></router-outlet>
 </main>
+
+

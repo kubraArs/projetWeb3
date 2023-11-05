@@ -38,4 +38,12 @@ a{
     text-decoration: none;
     color: white;
 }
+.content {
+    margin-left: 60px; 
+    transition: margin-left 0.3s ease; 
+  
+    &.open {
+      margin-left: 250px; 
+  }
+}
 

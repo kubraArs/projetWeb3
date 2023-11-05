@@ -1,32 +1,36 @@
+<div class="content" [ngClass]="{'open': sideNavStatus}">
 <div class="container">
-    <h1> TODO APPLICATION</h1>
-    <hr>
-    <form (ngSubmit)="onSubmit(taskForm)" #taskForm ="ngForm" >
+  <h1> TODO APPLICATION</h1>
+  <hr>
+  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
     <div class="form-group">
       <label for="task">Task to add</label>
-      <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter task" ngModel name ="task" required="">
+      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter task" ngModel name="task"
+             required="">
       <small *ngIf="taskForm.invalid && taskForm.dirty" id="emailMessage" class="form-text text-danger">Error</small>
     </div>
     <button [disabled]="taskForm.invalid" id="submitButton" type="submit" class="btn btn-primary">Submit</button>
   </form>
-
-
   <hr>
   <table class="table">
     <thead>
-      <tr>
-        <th scope="col">Task</th>
-        <th scope="col">Completed</th>
-        <th scope="col">Delete</th>
-      </tr>
+    <tr>
+      <th scope="col">Task</th>
+      <th scope="col">Completed</th>
+      <th scope="col">Delete</th>
+    </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let t of taskArray; index as i ">
-        <td>{{t.taskName}}</td>
-        <td> <input (change)="onCheck(i)"  id="checkbox" type="checkbox" ></td>
-        <td><button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button></td>
+      <tr *ngFor="let task of taskArray; index as i ">
+        <td>{{task.taskName}}</td>
+        <td><input type="checkbox" [ngModel]="task.isCompleted" (ngModelChange)="onCheck(i, $event)"></td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button>
+        </td>
       </tr>
-     
     </tbody>
   </table>
+  
+</div>
+
 </div>

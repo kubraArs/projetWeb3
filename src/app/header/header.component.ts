@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SidebarService } from '../sidebar-service/sidebar.service'; // Assure-toi que le chemin est correct
 
 @Component({
   selector: 'app-header',
@@ -8,21 +9,18 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeaderComponent implements OnInit{
 
   @Output() sideNavToggled = new EventEmitter<boolean>();
-  menueStatus: boolean= false;
+  menueStatus: boolean = false;
 
-  constructor() {}
+  constructor(private sidebarService: SidebarService) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
-  SideNavToggle(){
-    this.menueStatus= !this.menueStatus;
+  SideNavToggle() {
+    this.menueStatus = !this.menueStatus;
+
+    // Utilise le service SidebarService pour effectuer le basculement d'état
+    this.sidebarService.setSideNavStatus(this.menueStatus);
 
     this.sideNavToggled.emit(this.menueStatus);
-
   }
-
-
-
 }
