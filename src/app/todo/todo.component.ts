@@ -20,7 +20,6 @@ export class TodoComponent implements OnInit {
 
   ngOnInit() {
     this.taskArray = this.todoStateService.getTodoData() || [];
-
     
     this.sidebarService.sideNavStatus$.subscribe(status => {
       this.sideNavStatus = status;
