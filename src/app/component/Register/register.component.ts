@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router'; 
-import { StorageService } from '../Storage-service/storage-service.component';
+import { StorageService } from '../../service/Storage-service/storage-service.component';
 import * as bcrypt from 'bcryptjs';
 
 @Component({

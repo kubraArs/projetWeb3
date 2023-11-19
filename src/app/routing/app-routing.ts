@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {TodoComponent} from '../todo/todo.component';
-import { RegisterComponent } from '../Register/register.component'
-import { LoginComponent } from '../Login/login.component';
+import { ScreenTodoComponent } from '../screen/screen-todo/screen-todo.component';
+import { ScreenLoginComponent } from '../screen/screen-login/screen-login.component';
+import { ScreenProfilComponent } from '../screen/screen-profil/screen-profil.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '', pathMatch: 'full'},
-  {path: 'todo', component: TodoComponent},
-  { path: 'register', component: RegisterComponent } ,
-  { path: 'login', component: LoginComponent } 
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'todo', component: ScreenTodoComponent },
+  { path: 'profil', component: ScreenProfilComponent } ,
+  { path: 'login', component: ScreenLoginComponent } 
 ];
 
 @NgModule({

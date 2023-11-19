@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SidebarService } from '../sidebar-service/sidebar.service'; // Assure-toi que le chemin est correct
+import { SidebarService } from '../../service/sidebar-service/sidebar.service'; // Assure-toi que le chemin est correct
 
 @Component({
   selector: 'app-header',

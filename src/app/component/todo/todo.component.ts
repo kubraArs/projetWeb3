@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { TodoStateService } from '../todo-state-service/todo-state.service';
-import { SidebarService } from '../sidebar-service/sidebar.service';
+import { TodoStateService } from '../../service/todo-state-service/todo-state.service';
+import { SidebarService } from '../../service/sidebar-service/sidebar.service';
 
 @Component({
   selector: 'app-todo',
@@ -13,9 +13,9 @@ export class TodoComponent implements OnInit {
   sideNavStatus: boolean = false;
   taskArray: any[] = [];
 
-  constructor(
-    private todoStateService: TodoStateService,
-    private sidebarService: SidebarService
+  constructor(    
+    private sidebarService: SidebarService,
+    private todoStateService: TodoStateService
   ) {}
 
   ngOnInit() {

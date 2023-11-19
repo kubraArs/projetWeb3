@@ -1,0 +1,37 @@
+
+
+<div class="side-nav-content">
+  <ul class="nav-list">    
+
+    <li class="nav-list-item">    
+      <a routerLink="/">{{ 'home' }} </a>
+      
+  </li>
+
+
+
+<li class="nav-list-item">    
+
+  <a *ngIf="loggedin$" routerLink="todo">{{ 'to-do list' }}</a>
+
+</li>
+
+<li class="nav-list-item">    
+
+  <a *ngIf="loggedin$" routerLink="profile">{{ 'profile' }}</a>
+
+</li>
+
+<li class="nav-list-item">    
+
+  <a *ngIf="loggedin$" onClick="onLogout()">{{ 'logout' }}</a>      
+</li>
+
+<li class="nav-list-item">    
+  
+  <a *ngIf="!loggedin$" routerLink="login">{{ 'login' }}</a>
+ 
+</li>
+
+  </ul>
+</div>

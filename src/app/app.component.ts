@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { SidebarService } from './sidebar-service/sidebar.service'; // Assure-toi de mettre le chemin correct
+import { SidebarService } from './service/sidebar-service/sidebar.service'; // Assure-toi de mettre le chemin correct
 
 @Component({
   selector: 'app-root',

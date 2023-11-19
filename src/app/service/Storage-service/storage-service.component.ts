@@ -17,6 +17,7 @@ export class StorageService {
   }
 
   getIsLoggedIn(): boolean {
+    console.log("suis je connecté?")
     return this.isLoggedIn;
   }
   
