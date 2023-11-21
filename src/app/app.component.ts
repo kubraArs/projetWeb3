@@ -25,5 +25,6 @@ export class AppComponent implements OnInit {
         this.showTitle = !event.url.includes('/todo');
       }
     });
+    
   }
 }

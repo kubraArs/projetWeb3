@@ -23,4 +23,5 @@ export class StorageService {
   setIsLoggedIn(value: boolean): void {
     this.isLoggedIn = value;
   }
+
 }

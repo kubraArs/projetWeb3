@@ -3,7 +3,7 @@ npm install bootstrap
 ## Installer angular 
 npm install -g @angular/cli
 ## Lancer le projet
-ng serve -o 
+ng serve -o
 ## Si probleme  
 > Set-ExecutionPolicy RemoteSigned -Scope Process -Force
 

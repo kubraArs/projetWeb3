@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { StorageService } from '../Storage-service/storage-service.component';
 import * as bcrypt from 'bcryptjs';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,9 +22,12 @@ export class LoginComponent {
     const storedUserData = this.storageService.getUserData();
     if (storedUserData && username === storedUserData.username && bcrypt.compareSync(password, storedUserData.password)) {
       this.storageService.setIsLoggedIn(true);
+      localStorage.setItem('isLoggedIn', 'true');
       this.router.navigate(['/todo']); 
     } else {
       this.errorMessage = 'Nom d\'utilisateur ou mot de passe incorrect';
     }
   }
+
+  
 }
