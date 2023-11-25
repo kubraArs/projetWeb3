@@ -28,3 +28,4 @@ https://getbootstrap.com/
 https://angular.io/guide/forms-overview
 https://angular.io/api/common/NgFor
 https://github.com/katkovd73/to-do-list-in-angular
+https://www.youtube.com/watch?v=OPt87w9WuZo&ab_channel=PROgrammerRohan
