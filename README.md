@@ -27,5 +27,7 @@ entre les différentes pages de l'application.
 https://getbootstrap.com/
 https://angular.io/guide/forms-overview
 https://angular.io/api/common/NgFor
+todo : exemple d'utilisation d'un formulaire avec les composants Angular
 https://github.com/katkovd73/to-do-list-in-angular
+sidebar : exemple de creation d'une sidebar
 https://www.youtube.com/watch?v=OPt87w9WuZo&ab_channel=PROgrammerRohan
